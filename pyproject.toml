@@ -9,7 +9,7 @@ license = { text = "MIT" }
 authors = [
   { name="vex12853", email="admin@vex12853.net" },
 ]
-description = "API wrapper for Piped written in Python."
+description = "API wrapper for Piped written in Python.\n- [documentation]"
 readme = "README.rst"
 requires-python = ">=3.8"
 classifiers = [
