@@ -3,8 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "piped.py_vex12853"
+name = "piped.py"
 version = "0.1.0"
+license = "MIT"
 authors = [
   { name="vex12853", email="admin@vex12853.net" },
 ]
