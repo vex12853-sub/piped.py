@@ -14,7 +14,7 @@ __title__ = 'piped'
 __author__ = 'vex12853'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2024-present vex12853'
-__version__ = '0.0.0a'
+__version__ = '0.1.1'
 
 __path__ = __import__('pkgutil').extend_path(__path__, __name__)
 
