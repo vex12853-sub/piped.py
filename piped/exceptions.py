@@ -32,3 +32,9 @@ class InvalidPlaylistIdError(InvalidIdError):
     def __init__(self, message="The given playlist id is invalid") -> None:
         self.message = message
         super().__init__(self.message)
+
+
+class DownloadFailedError(Exception):
+    def __init__(self, message="Failed to download file") -> None:
+        self.message = message
+        super().__init__(self.message)

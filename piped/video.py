@@ -130,7 +130,7 @@ class Video:
     
     @property
     def thumbnail(self) -> str:
-        return self._json["thumbnail"]
+        return self._json["thumbnailUrl"]
     
     @property
     def hls(self) -> Union[None, str]:

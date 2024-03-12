@@ -1,4 +1,11 @@
+import mimetypes
+from io import BytesIO, FileIO
 from typing import Union
+
+import requests
+
+from .exceptions import DownloadFailedError
+from .video import Video
 
 
 class Stream:
@@ -30,6 +37,36 @@ class Stream:
         self.vidoOnly: bool = videoOnly
         self.itag: int = itag
         self.contentLength: int = contentLength
+
+    @classmethod
+    def fetch_bytes(self) -> BytesIO:
+        try:
+            r = requests.get(self.url)
+            r.raise_for_status()
+        except requests.exceptions.RequestException:
+            raise requests.exceptions.RequestException(f"Error fetching file from URL: {self.url}")
+        return BytesIO(r.content)
+    
+    @classmethod
+    def fetch_file(self) -> FileIO:
+        try:
+            r = requests.get(self.url)
+            r.raise_for_status()
+        except requests.exceptions.RequestException:
+            raise requests.exceptions.RequestException(f"Error fetching file from URL: {self.url}")
+        return FileIO(BytesIO(r.content), mode='rb')
+    
+    @classmethod
+    def download(self, path: str = "", extension: str | None = None) -> None:
+        try:
+            r = requests.head(self.url)
+            r.raise_for_status()
+            content_type = r.headers.get('content-type')
+            ext = mimetypes.guess_extension(content_type, strict=False) or '.txt' if not extension else extension
+            with open(f"{path if path else self.url.split('/')[-1]}", 'wb') as f:
+                f.write(r.content)
+        except Exception as e:
+            raise DownloadFailedError(f"Failed to download file: {e}")
 
 
 class AudioStream(Stream):
@@ -135,3 +172,7 @@ class RelatedVideo:
         self.uploaded: int = uploaded
         self.uploaderVerified: bool = uploaderVerified
         self.isShort: bool = isShort
+
+    @classmethod
+    def convert_video(self) -> Video:
+        return Video(self.id)

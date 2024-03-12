@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "piped.py"
-version = "0.1.1"
+dynamic = ["version"]
 license = { text = "MIT" }
 authors = [
   { name="vex12853", email="admin@vex12853.net" },
@@ -21,3 +21,6 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/vex12853-sub/piped.py"
 Issues = "https://github.com/vex12853-sub/piped.py/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "piped.__version__"}

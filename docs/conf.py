@@ -2,8 +2,11 @@
 """pytube documentation build configuration file."""
 import os
 import sys
+
 os.system("pip install sphinx-rtd-theme")
 import sphinx_rtd_theme
+
+from piped import __version__
 
 sys.path.insert(0, os.path.abspath("../"))
 
@@ -18,7 +21,8 @@ sys.path.insert(0, os.path.abspath("../"))
 project = 'piped.py'
 copyright = '2024, vex12853'
 author = 'vex12853'
-release = '0.1.0'
+version = __version__
+release = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
