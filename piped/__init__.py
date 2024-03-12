@@ -16,6 +16,8 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2024-present vex12853'
 __version__ = '0.1.2'
 
+v = __version__
+
 __path__ = __import__('pkgutil').extend_path(__path__, __name__)
 
 import logging
