@@ -6,8 +6,6 @@ import sys
 os.system("pip install sphinx-rtd-theme")
 import sphinx_rtd_theme
 
-from ..piped import v
-
 sys.path.insert(0, os.path.abspath("../"))
 
 # Configuration file for the Sphinx documentation builder.
@@ -21,8 +19,7 @@ sys.path.insert(0, os.path.abspath("../"))
 project = 'piped.py'
 copyright = '2024, vex12853'
 author = 'vex12853'
-version = v
-release = v
+version = '0.1.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
