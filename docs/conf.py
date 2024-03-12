@@ -6,7 +6,7 @@ import sys
 os.system("pip install sphinx-rtd-theme")
 import sphinx_rtd_theme
 
-from piped import __version__
+from ..piped import __version__
 
 sys.path.insert(0, os.path.abspath("../"))
 
