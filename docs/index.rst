@@ -3,29 +3,79 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to piped.py's documentation!
-====================================
+piped.pyへよこそ。
+===================
 
-Release v\ |version|. (:ref:`Installation<install>`)
+リリース v\ |version|. (:ref:`インストール<install>`)
 
 .. image:: https://img.shields.io/pypi/v/piped.py.svg
-  :alt: Pypi
-  :target: https://pypi.python.org/pypi/piped.py/
+   :target: https://pypi.python.org/pypi/piped.py
+   :alt: PyPIのバージョン情報
+.. image:: https://img.shields.io/pypi/pyversions/piped.py.svg
+   :target: https://pypi.python.org/pypi/piped.py
+   :alt: PyPIのサポートしているPythonのバージョン
 
-.. image:: https://img.shields.io/pypi/pyversions/pyped.py.svg
-  :alt: Python Versions
-  :target: https://pypi.python.org/pypi/piped.py/
+**piped.py**はPythonで作られた軽量なPipedAPIのラッパーライブラリです。
 
-API wrapper for Piped written in Python.
+
+使用例
+-------------------
+
+.. code:: py
+
+    import piped
+    
+    print(piped.version_info)
+    print(piped.server.latency())
+    video = piped.Video("video id here")
+    print(video.title)
+    print(video.license)
+    channel = video.fetch_author()
+    print(channel.name)
+    print(channel.description)
+
+
+特徴
+-------------------
+
+- オブジェクト指向を利用した直感的な運用が可能
+- コマンドラインツールとしてのサポート
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+ユーザーガイド
+-------------------
+
+基本的なサンプルコードなど。
+
+.. toctree::
+   :maxdepth: 2
+
+   user/install
+   user/quickstart
+   user/streams
+   user/captions
+   user/playlist
+   user/channel
+   user/search
+   user/cli
+   user/exceptions
+
+APIドキュメント
+-------------------
+
+全ての関数、クラス、メソッドのリファレンス。
+
+.. toctree::
+  :maxdepth: 2
+
+  api
 
 
-Indices and tables
-==================
+目次とテーブル
+===================
 
 * :ref:`genindex`
 * :ref:`modindex`

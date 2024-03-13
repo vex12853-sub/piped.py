@@ -3,19 +3,19 @@ piped.py
 
 .. image:: https://img.shields.io/pypi/v/piped.py.svg
    :target: https://pypi.python.org/pypi/piped.py
-   :alt: PyPIのバージョン情報
+   :alt: PyPI version info
 .. image:: https://img.shields.io/pypi/pyversions/piped.py.svg
    :target: https://pypi.python.org/pypi/piped.py
-   :alt: PyPIのサポートしているPythonのバージョン
+   :alt: PyPI supported Python versions
 
-Pythonで作られたPipedのラッパーパイブラリです。
+API wrapper for Piped written in Python.
 
-インストール
--------------
+Installing
+----------
 
-**Python 3.8 以降のバージョンが必須です**
+**Python 3.8 or higher is required**
 
-ライブラリをインストールする場合は次のコマンドを実行してください:
+To install the library, you can just run the following command:
 
 .. code:: sh
 
@@ -26,7 +26,7 @@ Pythonで作られたPipedのラッパーパイブラリです。
     py -3 -m pip install -U piped.py
 
 
-簡単な例
+Quick Example
 -------------
 
 .. code:: py
@@ -43,7 +43,7 @@ Pythonで作られたPipedのラッパーパイブラリです。
     print(channel.description)
 
 
-リンク
+Links
 ------
 
 - `Documentation <https://pipedpy.readthedocs.io/en/latest/index.html>`_
